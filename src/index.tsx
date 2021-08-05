@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* librarys */
+import React from "react"
+import ReactDOM from "react-dom"
+
+import {
+  MetronicLayoutProvider,
+  MetronicSplashScreenProvider,
+  MetronicSubheaderProvider,
+} from "./_metronic/layout"
+
+/* components */
+import App from "views/App"
+/* styles */
+import "./index.scss"
+import "./_metronic/_assets/plugins/keenthemes-icons/font/ki.css"
+import "socicon/css/socicon.css"
+import "@fortawesome/fontawesome-free/css/all.min.css"
+import "./_metronic/_assets/plugins/flaticon/flaticon.css"
+import "./_metronic/_assets/plugins/flaticon2/flaticon.css"
+import "react-datepicker/dist/react-datepicker.css"
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <MetronicLayoutProvider>
+        <MetronicSubheaderProvider>
+          <MetronicSplashScreenProvider>
+            <App/>
+          </MetronicSplashScreenProvider>
+        </MetronicSubheaderProvider>
+      </MetronicLayoutProvider>
   </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  document.getElementById("root")
+)
